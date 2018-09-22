@@ -11,6 +11,10 @@ echo "GIT_BRANCH: $(git branch)"
 export "GIT_BRANCH=$(git branch)"
 echo "exported GIT_BRANCH: $GIT_BRANCH"
 
+echo "$GIT_BRANCH" > "$2/GIT_BRANCH"
+echo "Added GIT_BRANCH to variables"
+cat $2/GIT_BRANCH
+
 indent() {
   sed -u 's/^/       /'
 }
