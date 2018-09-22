@@ -8,6 +8,11 @@ echo "CACHE_DIR $2"
 echo "ENV_DIR $3"
 echo "GIT_BRANCH: $(git branch)"
 
+export GIT_BRANCH=$(git branch)
+
+export GIT_BRANCH="$(git branch)"
+echo "exported GIT_BRANCH: $GIT_BRANCH_PROFILE"
+
 indent() {
   sed -u 's/^/       /'
 }

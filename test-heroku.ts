@@ -6,4 +6,5 @@ console.log("CACHE_DIR", process.env.CACHE_DIR);
 console.log("SOURCE_VERSION", process.env.SOURCE_VERSION);
 console.log("STACK", process.env.STACK);
 console.log("GIT_BRANCH", process.env.GIT_BRANCH);
+console.log("GIT_BRANCH_PROFILE", process.env.GIT_BRANCH_PROFILE);
 console.log("LANG", process.env.LANG);
