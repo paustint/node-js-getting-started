@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# BUILD_DIR CACHE_DIR ENV_DIR
+
+echo "-----> Found a hello.txt"
+echo "BUILD_DIR $1"
+echo "CACHE_DIR $2"
+echo "ENV_DIR $3"
+echo "GIT_BRANCH: $(git branch)"
+

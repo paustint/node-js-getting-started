@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# this pack is valid for apps with a hello.txt in the root
+# $1=BUILD_DIR
+
+echo "BUILD_DIR $1"
+
+if [ -f $1/hello.txt ]; then
+  echo "HelloFramework"
+  exit 0
+else
+  exit 1
+fi
