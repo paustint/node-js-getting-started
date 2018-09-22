@@ -9,6 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "node test.js",
+    "heroku-prebuild": "ts-node test-heroku.ts",
     "heroku-postbuild": "ts-node test-heroku.ts"
   },
   "dependencies": {
