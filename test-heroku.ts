@@ -10,3 +10,5 @@ console.log("GIT_BRANCH_PROFILE", process.env.GIT_BRANCH_PROFILE);
 console.log("LANG", process.env.LANG);
 console.log("GIT_BRANCH_PROFILE_TEST", process.env.GIT_BRANCH_PROFILE_TEST);
 console.log("LANG_TEST", process.env.LANG_TEST);
+
+console.log(JSON.stringify(process.env, null, 2));
