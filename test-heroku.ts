@@ -8,3 +8,6 @@ console.log("STACK", process.env.STACK);
 console.log("GIT_BRANCH", process.env.GIT_BRANCH);
 console.log("GIT_BRANCH_PROFILE", process.env.GIT_BRANCH_PROFILE);
 console.log("LANG", process.env.LANG);
+console.log("1", process.env["1"]);
+console.log("2", process.env["2"]);
+console.log("3", process.env["3"]);
