@@ -6,6 +6,6 @@ export "GIT_BRANCH_PROFILE=$(git branch)"
 export "GIT_BRANCH_PROFILE=$GIT_BRANCH"
 export LANG=${LANG:-en_US.UTF-8}
 
-echo 1=$1
-echo 2=$2
-echo 3=$3
+export 1=$1
+export 2=$2
+export 3=$3
