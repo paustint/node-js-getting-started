@@ -10,8 +10,7 @@ echo "GIT_BRANCH: $(git branch)"
 
 export GIT_BRANCH=$(git branch)
 
-export GIT_BRANCH="$(git branch)"
-echo "exported GIT_BRANCH: $GIT_BRANCH_PROFILE"
+echo "exported GIT_BRANCH: $GIT_BRANCH"
 
 indent() {
   sed -u 's/^/       /'
