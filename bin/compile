@@ -40,10 +40,6 @@ else
 fi | indent
 
 
-profile_d_dir="$BUILD_DIR/.profile.d"
-mkdir -p "$profile_d_dir"
-cp "$BP_DIR/.profile.d/add-git-branch-env.sh" "$profile_d_dir/"
-
 export_env_dir() {
   local env_dir=$1
   local whitelist_regex=${2:-''}
@@ -60,5 +56,8 @@ export_env_dir() {
 cat test.json
 $(sed -i'.bak' "s/_branch_/$GIT_BRANCH/g" test.json)
 cat test.json
+
+echo $GIT_BRANCH >> $ENV_DIR/GIT_BRANCH
+echo $GIT_BRANCH >> $ENV_DIR/GIT_BRANCH_FOO
 
 export_env_dir "$ENV_DIR"
