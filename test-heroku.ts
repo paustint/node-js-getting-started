@@ -14,4 +14,4 @@ console.log("LANG_TEST", process.env.LANG_TEST);
 
 // console.log(JSON.stringify(process.env, null, 2));
 
-console.log(fs.readFileSync("./test.json"));
+console.log(fs.readFileSync("./test.json", "utf-8"));
