@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# export "GIT_BRANCH_PROFILE_TEST=$(git branch)"
-export LANG_TEST=${LANG:-en_US.UTF-8}
-
-GIT_BRANCH_PROFILE_TEST="$(git branch)"
+"GIT_BRANCH=$(git branch)"
+cat test.json
+$(sed -i'.bak' "s/_branch_/$GIT_BRANCH/g" test.json)
+cat test.json
+export $GIT_BRANCH

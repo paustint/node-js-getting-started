@@ -12,4 +12,6 @@ console.log("LANG1", process.env.LANG1);
 console.log("GIT_BRANCH_PROFILE_TEST", process.env.GIT_BRANCH_PROFILE_TEST);
 console.log("LANG_TEST", process.env.LANG_TEST);
 
-console.log(JSON.stringify(process.env, null, 2));
+// console.log(JSON.stringify(process.env, null, 2));
+
+console.log(fs.readFileSync("./test.json"));
