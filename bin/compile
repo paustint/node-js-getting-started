@@ -13,8 +13,8 @@ echo "CACHE_DIR $CACHE_DIR"
 echo "ENV_DIR $ENV_DIR"
 echo "BP_DIR $BP_DIR"
 
-echo "GIT_BRANCH: $(git branch)"
-export "GIT_BRANCH=$(git branch)"
+echo "GIT_BRANCH: $(git symbolic-ref --short -q HEAD)"
+export GIT_BRANCH="$(git symbolic-ref --short -q HEAD)"
 export GIT_BRANCH1="$GIT_BRANCH"
 export TEST_VAR1=TEST
 
@@ -57,7 +57,13 @@ cat test.json
 $(sed -i'.bak' "s/_branch_/$GIT_BRANCH/g" test.json)
 cat test.json
 
-echo $GIT_BRANCH >> $ENV_DIR/GIT_BRANCH
-echo $GIT_BRANCH >> $ENV_DIR/GIT_BRANCH_FOO
+# Set application variable GIT_BRANCH
+
+if branch=$(git symbolic-ref --short -q HEAD)
+then
+  echo $GIT_BRANCH >> $ENV_DIR/GIT_BRANCH
+else
+  echo master >> $ENV_DIR/GIT_BRANCH
+fi
 
 export_env_dir "$ENV_DIR"
