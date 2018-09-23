@@ -15,6 +15,7 @@ echo "BP_DIR $BP_DIR"
 
 echo "GIT_BRANCH: $(git branch)"
 export "GIT_BRANCH=$(git branch)"
+export GIT_BRANCH1="$GIT_BRANCH"
 echo "exported GIT_BRANCH: $GIT_BRANCH"
 
 echo "$GIT_BRANCH" > "$2/GIT_BRANCH"
