@@ -16,6 +16,8 @@ echo "BP_DIR $BP_DIR"
 echo "GIT_BRANCH: $(git branch)"
 export "GIT_BRANCH=$(git branch)"
 export GIT_BRANCH1="$GIT_BRANCH"
+export TEST_VAR1=TEST
+
 echo "exported GIT_BRANCH: $GIT_BRANCH"
 
 echo "$GIT_BRANCH" > "$2/GIT_BRANCH"
@@ -41,3 +43,18 @@ fi | indent
 profile_d_dir="$BUILD_DIR/.profile.d"
 mkdir -p "$profile_d_dir"
 cp "$BP_DIR/.profile.d/add-git-branch-env.sh" "$profile_d_dir/"
+
+export_env_dir() {
+  local env_dir=$1
+  local whitelist_regex=${2:-''}
+  local blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH|IFS)$'}
+  if [ -d "$env_dir" ]; then
+    for e in $(ls $env_dir); do
+      echo "$e" | grep -E "$whitelist_regex" | grep -qvE "$blacklist_regex" &&
+      export "$e=$(cat $env_dir/$e)"
+      :
+    done
+  fi
+}
+
+export_env_dir "$ENV_DIR"
